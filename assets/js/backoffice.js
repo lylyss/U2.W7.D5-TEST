@@ -58,7 +58,7 @@ form.addEventListener("submit", function (e) {
     },
   })
     .then((res) => {
-      if (!res.ok) throw new Error("Errore nella richiesta");
+      if (!res.ok) throw new Error("Prodotto esistente");
       return res.json();
     })
     .then(() => {

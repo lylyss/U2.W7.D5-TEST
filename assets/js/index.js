@@ -50,7 +50,7 @@ function renderProducts(products) {
           <p class="card-text fw-bold">€${product.price}</p>
           <div class="mt-auto d-flex justify-content-between">
             <a href="backoffice.html?id=${product._id}" class="btn btn-sm btn-outline-primary">Modifica</a>
-            <a href="detail.html?id=${product._id}" class="btn btn-sm btn-outline-dark">Scopri di più</a>
+            <a href="details.html?id=${product._id}" class="btn btn-sm btn-outline-dark">Scopri di più</a>
           </div>
         </div>
       </div>

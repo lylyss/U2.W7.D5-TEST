@@ -14,6 +14,31 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="assets/img/logo.jpg" alt="logo buon voyage" style="width: 100px;" >
+          <button class="btn btn-outline-light ms-auto" data-bs-toggle="modal" data-bs-target="#cartModal">
+            🛒 <span id="cart-count" class="badge bg-danger">0</span>
+          </button>
+        </div>
+      </nav>
+      
+      
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Il tuo carrello</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="cart-items"></div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+              <button class="btn btn-success">Procedi al pagamento</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="container py-4">
       <h1 class="text-center mb-4">Il nostro shop</h1>
       <div id="alert-placeholder"></div>
