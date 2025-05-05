@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+  </head>
+    <title>🛳️Bon-Voyage</title>
+
+   
+  </head>
+  <style>
+    body {
+      font-family: "Spectral", serif;
+      background: #020024;
+background: linear-gradient(10deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 16%, rgba(3, 155, 217, 1) 56%, rgba(3, 160, 220, 1) 66%, rgb(2, 38, 40) 100%);
+      
+    }
+   
+    input::placeholder {
+      color: #918f8f88;
+    }
+    input:focus {
+      border-color: rgb(3, 147, 249);
+      box-shadow: 0 0 10px rgb(3, 147, 249);
+    }
+    #backCard {
+      background-image: url(./assets/img/midnight_sea.gif);
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+    
+    #cartBtn {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)
+    }
+    #cartBtn {
+            
+            
+            text-align: center;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            
+            border-radius: 0px;
+            display: block;
+          }
+
+    #cartBtn:hover {
+            background-position: right center; 
+            color: #fff;
+            text-decoration: none;
+          }
+         
+  
+  </style>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="background-image: url(./assets/img/vertical-aerial-shot-sea-waves-hitting-cliff.jpg); background-position: center; background-size: 100%;">
+        <div class="container-fluid">
+          <img src="assets/img/logo.jpg" alt="logo buon voyage" style="width: 100px;" >
+          <div class="ms-auto">
+          <a class="text-decoration-none text-black text-uppercase border ps-2 pe-2" style="background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)" href="profile.html">
+          <img id="imgProfile" src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsb3xlbnwwfHwwfHx8MA%3D%3D" alt="Profilo" class="rounded" width="40" height="40" style="object-fit: cover;">
+          <span id="nameProfile">Giovanni</span></a>
+          </div>
+          <button id="cartBtn" class="btn btn-outline-light ms-auto bg-light" data-bs-toggle="modal" data-bs-target="#cartModal">
+            🛒 <span id="cart-count" class="badge bg-danger">0</span>
+          </button>
+        </div>
+      </nav>
+      <hr class="border-black border-4 m-0" />
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Il tuo carrello</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="cart-items"></div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+              <button class="btn btn-success">Procedi al pagamento</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-3">
+        <div id="multiVideoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+          <div class="carousel-inner">
+      
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="ratio ratio-16x9 ">
+                    <iframe src="https://www.youtube.com/embed/5JA2bpXJ_U8?start=182" title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/MuYy0pt-VuU?start=182" title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/2b2gJu-g3qE" title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/iv-z8dtWykM" title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/ooW5T6QyBpg" title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/KpCVQcSqB0Q" title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+      
+          <!-- Controlli -->
+          <button  class="carousel-control-prev" type="button" data-bs-target="#multiVideoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Precedente</span>
+          </button>
+          <button  class="carousel-control-next" type="button" data-bs-target="#multiVideoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Successivo</span>
+          </button>
+        </div>
+      </div>
+
+    <div class="container py-4">
+      <h1 class="text-center mb-4 text-black text-uppercase" style="background-color: #0a6e96c0; border-radius: 5px;">Il nostro shop </h1>
+      <div id="alert-placeholder"></div>
+      <div id="loading" class="text-center mb-4" style="display: none">
+        <div class="spinner-border text-primary" role="status"></div>
+      </div>
+      <div id="product-list" class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- LE CARD -->
+      </div>
+      <span><img src="./assets/img/nave.png" style="width: 100%;" alt="nave"></span>
+    </div>
+    <footer class="bg-dark text-white py-5 mt-5">
+      <div class="container">
+        <div class="row align-items-center mb-4">
+          <div class="col-md-6">
+            <h2 class="fw-bold text-uppercase" style="color: rgb(33, 172, 223);">Iscriviti alla Newsletter</h2>
+            <p class="text-secondary">Resta aggiornato sulle novità, offerte esclusive e notizie dal futuro.</p>
+          </div>
+          <div class="col-md-6">
+            <form class="d-flex flex-column flex-sm-row gap-2">
+              <input type="email" class="form-control bg-light text-white border-0"  placeholder="Inserisci la tua email" required>
+              <button type="submit" class="btn btn-outline-info px-4">Iscriviti</button>
+            </form>
+          </div>
+        </div>
+    
+        <hr class="border-info" />
+    
+        <div class="row text-center text-md-start">
+          <div class="col-md-6">
+            <p class="text-secondary mb-0">© 2025 BON VOYAGE SAS. Tutti i diritti riservati.</p>
+          </div>
+          
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-info text-decoration-none me-3">Privacy</a>
+            <a href="#" class="text-info text-decoration-none">Contatti</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/home.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

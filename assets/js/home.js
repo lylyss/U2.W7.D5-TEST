@@ -36,15 +36,15 @@ function renderProducts(products) {
     col.className = "col";
 
     col.innerHTML = `
-    <div class="card h-100">
+    <div class="card h-100" id="backCard">
       <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}" style="height: 200px; object-fit: cover;" />
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">${product.name}</h5>
-        <p class="card-text">${product.description}</p>
-        <p class="fw-bold">€${product.price}</p>
+        <h5 class="card-title text-light">${product.name}</h5>
+        <p class="card-text text-light">${product.description}</p>
+        <p class="fw-bold text-primary">€${product.price}</p>
         <div class="d-grid gap-2 mt-auto">
-          <a href="detail.html?id=${product._id}" class="btn btn-outline-dark">Scopri di più</a>
-          <button class="btn btn-primary add-to-cart-btn" data-id="${product._id}" data-name="${product.name}" data-price="${product.price}">Aggiungi al carrello</button>
+          <a href="detail.html?id=${product._id}" class="btn btn-outline-light">Scopri di più</a>
+          <button id="cartBtn" class="btn add-to-cart-btn" data-id="${product._id}" data-name="${product.name}" data-price="${product.price}">Aggiungi al carrello</button>
         </div>
       </div>
     </div>
@@ -61,3 +61,53 @@ function showAlert(message, type) {
     </div>
   `;
 }
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart-btn")) {
+    const id = e.target.dataset.id;
+    const name = e.target.dataset.name;
+    const price = e.target.dataset.price;
+
+    cart.push({ id, name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartModal();
+  }
+
+  if (e.target.classList.contains("remove-from-cart-btn")) {
+    const index = e.target.dataset.index;
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartModal();
+  }
+});
+
+function updateCartModal() {
+  const cartItems = document.getElementById("cart-items");
+  const cartCount = document.getElementById("cart-count");
+
+  cartItems.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Il carrello è vuoto.</p>";
+    cartCount.textContent = "0";
+    return;
+  }
+
+  cart.forEach((item, i) => {
+    cartItems.innerHTML += `
+      <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+        <div>
+          <strong>${item.name}</strong> <br />
+          <span class="text-muted">€${item.price}</span>
+        </div>
+        <button class="btn btn-sm btn-outline-danger remove-from-cart-btn" data-index="${i}">Rimuovi</button>
+      </div>
+    `;
+  });
+
+  cartCount.textContent = cart.length;
+}
+
+// Carica il carrello iniziale al primo avvio
+updateCartModal();
